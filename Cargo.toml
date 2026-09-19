@@ -1,0 +1,27 @@
+[package]
+name = "pganonymize"
+version = "0.1.0"
+edition = "2021"
+description = "Anonymizes PII in a real Postgres database in place, deterministically, so a prod-shaped dataset is safe to use in staging"
+license = "MIT"
+authors = ["Animesh Raj <animesh080808@gmail.com>"]
+repository = "https://github.com/itsarraj/pganonymize"
+readme = "README.md"
+keywords = ["postgres", "anonymize", "pii", "gdpr", "staging"]
+categories = ["command-line-utilities", "database"]
+
+[lib]
+name = "pganonymize"
+path = "src/lib.rs"
+
+[[bin]]
+name = "pganonymize"
+path = "src/main.rs"
+
+[dependencies]
+postgres = "0.19"
+clap = { version = "4", features = ["derive"] }
+anyhow = "1"
+serde = { version = "1", features = ["derive"] }
+toml = "0.8"
+sha2 = "0.10"
