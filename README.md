@@ -10,6 +10,12 @@ hand-rolled `UPDATE users SET email = 'x' || id || '@test.com'` script
 (which destroys every join that went through an email) or shipping a raw
 prod dump to staging and hoping.
 
+## Installation
+
+```sh
+cargo install --path .
+```
+
 ## Usage
 
 ```bash
